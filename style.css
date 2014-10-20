@@ -1,0 +1,216 @@
+body {
+    text-align: center;
+    font-family: Helvetica;
+    text-shadow: 2px 2px 1px #000000;
+    color: #FFFFFF;
+    background: url('grass.jpg');
+    background-size: 100%;
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    font-size: 32px;
+    background-color: #000000;
+    width: 190px;
+    padding: 4px;
+    box-shadow: 5px 5px 2px #000000;
+    border: 2px outset #f3f1f4;
+}
+
+h2 {
+    font-size: 18px;
+    width: 190px;
+    padding: 4px;
+    background-color: #1e9c23;
+    box-shadow: 5px 5px 2px #000000;
+    border: 2px outset #f3f1f4;
+    margin: 20px auto;
+}
+
+#leftsidebar {
+    position: absolute;
+    margin: 40px 100px;
+    left: 50px;
+    text-align: center;
+}
+/* Need to address line return on h1 title once browser screen full screen...? */
+#rightsidebar {
+    position: absolute;
+    right: 90px;
+    top: 0;
+    text-align: left;
+    background-color: #1b9ed4;
+    padding: 10px;
+    box-shadow: 5px 5px 2px #000000;
+    margin: 82px 0px;
+    border: 2px outset #f3f1f4;
+    font-size: 15px;
+    width: 265px;
+}
+
+table {
+    box-shadow: 5px 5px 2px #000000;
+}
+
+table, th {
+    border: 1px solid #93E0FA;
+    background-color: #1b9ed4;  
+    width: 202px; 
+    font-size: 15px;
+    text-align: center;
+}
+
+th {
+    padding: 10px;
+}
+
+td {
+    background-color: #000000;
+    padding: 10px;
+    text-align: center;
+}
+
+input {
+    background-color: #000000;
+    color: #FFFFFF;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    font-size: 12px;
+    border: 1px inset #393d50;
+}
+
+#board {
+    margin: 0 auto;
+    height: 450px;
+    width: 450px;
+}
+
+.cell {
+    float:left; 
+    width: 144px;
+    height: 144px;
+    background-color: #1b9ed4;
+    margin: 2px;
+    border: 1px solid #f3f1f4;
+    font-size: 135px;
+    text-align: center;
+    box-shadow: 5px 5px 2px #000000;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.cell:hover {
+    background-color: #FFFFFF;
+    color: #000000;
+    box-shadow: 8px 10px 5px #000000;
+    border: 1px solid #00992f;
+}
+          
+.clear {
+    clear: both;
+}
+
+button {
+    height: 30px;
+    width: 120px;
+    margin: 0 auto;
+    box-shadow: 5px 5px 2px #000000;
+    background-color: #000000;
+    color: #FFFFFF;
+    border: 2px outset #f3f1f4;
+    font-size: 13px;
+    text-shadow: 2px 2px 3px #000000;
+    cursor: pointer;
+}
+
+#reset, #change {
+    margin: 25px;
+}
+
+@media screen and (max-width: 910px) {
+    #board {
+        height: 300px;
+        width: 300px;
+    }
+
+    .cell {
+        width: 94px;
+        height: 94px;
+        font-size: 80px;
+    }
+
+    h2 {
+        font-size: 16px;
+        width: 120px;  
+    }
+
+    button {
+        height: 20px;
+        width: 80px;
+        font-size: 10px;
+    }   
+
+    #leftsidebar, #rightsidebar, #bottomright, * {
+        display: none;
+    }   
+}
+
+@media screen and (min-width: 911px) and (max-width: 1200px) {
+    #board {
+        height: 360px;
+        width: 360px;
+    }
+
+    .cell {
+        width: 114px;
+        height: 114px;
+        font-size: 100px;
+    }
+
+    h2 {
+        font-size: 16px;
+        width: 140px;  
+    }
+
+    h1 {
+        font-size: 18px;
+        width: 150px;
+    }
+
+    #leftsidebar {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 20px;
+        text-align: center;
+    }
+/* Need to address line return on h1 title once browser screen full screen...? */
+    #rightsidebar {
+        position: absolute;
+        right: 90px;
+        top: 0;
+        text-align: center;
+        background-color: #1b9ed4;
+        padding: 4px;
+        box-shadow: 5px 5px 2px #000000;
+        margin: 82px 0px;
+        border: 2px outset #f3f1f4;
+        font-size: 11px;
+        width: 170px;
+    }
+
+    input {
+        font-size: 15px;
+    }
+
+    table, th {
+        width: 120px;
+    }
+
+    button {
+        height: 20px;
+        width: 80px;
+        font-size: 10px;
+    }   
+}

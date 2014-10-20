@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html x-ng-app="TTTApp" x-ng-controller="TTTCtrl">
+    <head>
+        <title>Tic Tac Toe</title>
+        <!--CSS stylesheet data-bound in main.js. Controller must be included in html tag to work-->
+        <link rel="stylesheet" type="text/css" href="{{stylePath}}">
+        <!-- AngularJS -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+        <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/1.0.21/firebase.js"></script>
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/0.7.1/angularfire.min.js"></script>
+        <!-- Javascript -->
+        <script type="text/javascript" src="main.js"></script>
+    </head>
+    <body>
+        <!-- Left Side Bar -->
+        <div id ="leftsidebar">
+            <!-- Header for showing "Player 1 vs. Player 2" -->
+            <h2 id="vs">{{object.player1}} vs. {{object.player2}}</h2>
+            <table>
+                <tr>
+                    <th>PLAYER SCORES</th>
+                </tr>
+                <tr>
+                    <!-- Input name for Player 1, and their tally of game wins -->
+                    <td><input type="text" x-ng-model="object.player1" size="20" placeholder="Enter Player X">: &nbsp; {{object.p1score}}</td>
+                </tr>
+                <tr>
+                    <!-- Input name for Player 2, and their tally of game wins -->
+                    <td><input type="text" x-ng-model="object.player2" size="20" placeholder="Enter Player O">: &nbsp; {{object.p2score}}</td>
+                </tr>
+                <tr>
+                    <!-- Shows tally of "Cat's Game" ties -->
+                    <td>Ties: &nbsp; {{object.ties}}</td>
+                </tr>
+            </table>
+            <br />
+            <!-- Button for clearing Player 1 & 2 game wins and Cat's Game ties -->
+            <button x-ng-click="clearTotals()">Clear Totals</button>
+        </div>
+        <!-- Heading for showing current move Player, Winner, or Draw -->
+        <h2>{{object.nextPlayer}} {{object.winner}}</h2>
+        <div id="board">
+            <!-- Button for clearing board for new game or changing board background appearance -->
+            <div x-ng-repeat="cell in object.cells track by $index" x-ng-class="{cell: true, clear: $index % 3 == 0}" x-ng-click="nextMove($index);">{{cell}}</div>
+            <button id="reset" x-ng-click="resetGame()">Restart</button>	
+            <button id="change" x-ng-click="changeStyle()">Change Board</button>
+        </div>
+        <!-- Right Side Bar -->
+        <div id ="rightsidebar">
+            <h1>TIC TAC TOE</h>
+    </body>
+</html>
+
+<!-- Need to include radio selection to determine which player starts game. -->
